@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<script src="../../js/adapter.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/jquery-3.0.0.js" ></script>
+		<script type="text/javascript"  src="../../js/common.js"></script>
+		<script type="text/javascript" src="../../js/index.js"></script>
+		<style type="text/css">
+			html{
+				font-size:12px;/*10px=10/10rem*/
+			} 
+		</style>
+	</head>
+
+	<body>
+		
+		
+		<header class="mui-header">
+            <div class="header-top">
+            	<img src="../../img/i _search.png" class="header-top-right" />
+            </div>
+            <div class="header-footer">
+            	<div class="picture-wrap"><img src="../../img/touxiang.png" class="picture" /></div>
+            	<label class="nick">Lea</label>
+            </div>
+		</header>
+		<div class="mui-content">
+		    <div class="content-header">
+		    	<span class="content-header-span content-header-left">
+		    		<label style="color: rgb(171,171,171);font-size: 0.3rem;">我的钻石</label>
+		    		<input type="text" class="money" value="0" readonly="readonly" />
+		    	</span>
+		    	<span class="content-header-span content-header-right">
+		    		<label style="color: rgb(171,171,171);font-size: 0.3rem;">我的收入</label>
+		    		<input type="text" class="income" value="0" readonly="readonly" id="income_l"/>
+		    	</span>
+		    </div>
+		    <div class="cmiddle-top" style="height: 25%;">
+		    		<span class="span-style my_agent" style="background-color: rgb(251,193,104);">
+		    			<img src="../../img/my_agent.png" class="btu-img">  
+		    			<label class="btu-font">我的代理</label>
+		    		</span>
+		    		<!--<span class="span-style create_agent" style="background-color: rgb(159,165,253);">
+		    			<img src="img/create_agent.png" class="btu-img">
+		    			<label class="btu-font">创建代理</label>
+		    		</span>
+
+		    		<span class="span-style chargemoney_agent" style="background-color: rgb(254,164,120);" id="gender_charge">
+
+		    		<span class="span-style chargemoney_agent" style="background-color: rgb(254,164,120);">-->
+
+		    		<span class="span-style chargemoney_agent" style="background-color: rgb(254,164,120);" id="gender_money">
+
+		    			<img src="../../img/chargemoney_agent.png" class="btu-img" >
+		    			<label class="btu-font">代理充值</label>
+		    		</span>
+		    	</div>
+		    	<!--<div class="cmiddle-footer">-->
+		    		<!--<span class="span-style chargemoney_player" style="background-color: rgb(254,139,126);">
+		    			<img src="img/chargemoney_player.png" class="btu-img">
+		    			<label class="
+		    				
+		    				
+		    				">玩家充值</label>
+		    		</span>-->
+		    		<!--<span class="span-style applicationList" style="background-color: rgb(189,141,254);">
+		    			<img src="img/applicationList.png" class="btu-img">
+		    			<label class="btu-font">申请列表</label>
+		    		</span>	
+		    		<span class="span-style quit" style="background-color: rgb(139,201,237);">
+		    			<img src="img/quit.png" class="btu-img">
+		    			<label class="btu-font">退出</label>
+		    		</span>
+		    </div>
+		    -->
+		<div class="content-footer">
+		    	<img src="../../img/QR-Code.jpg" style="width:48%;height: 80%;margin-top: 0.35rem;" />
+		    </div>
+		<div class="mui-footer">				
+			长按图片可保存到手机哦！
+			<!--<button type="button" class="mui-btn" data-loading-text = "下载中"><a href="img/QR-Code.jpg" download="QR-Code.jpg" style="color: white;">点击下载</a></button>-->
+		</div>
+		<script type="text/javascript" src="../../js/adapter.js" ></script>
+		<script type="text/javascript" src="../../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../../js/jquery-3.0.0.js" ></script>
+		<script type="text/javascript" src="../../js/wxLogic.js" ></script>
+		<script>
+	//跳转至我的信息页面
+	    $(".picture").on("click",function()
+        {
+        	mui.openWindow({
+					url:'../../page/my_information/page/my_information.html',
+					id: 'my_information.html',
+          })
+        });
+    //跳转至代理页面
+        $(".my_agent").on("click",function()
+        {
+        	mui.openWindow({
+					url:'../../page/myagent/page/myagent.html',
+					id: 'myagent.html',
+          })
+        });
+     //跳转至我的钻石页面   
+        $(".content-header-left").on("click",function()
+        {
+        	mui.openWindow({
+					url:'../../page/my_diamonds/page/my_diamonds.html',
+					id: 'my_diamonds.html',
+          })
+        });
+      //跳转至我的收入页面     
+        $(".content-header-right").on("click",function()
+        {
+        	mui.openWindow({
+					url:'../../page/my_income/page/my_income.html',
+					id: 'my_income.html',
+          })
+        });
+        //跳转至我的代理充值
+        $("#gender_money").on("click",function()
+        {
+        	mui.openWindow({
+					url:'../../page/my_agent/page/myagent.html',
+					id: 'myagent.html',
+          })
+        });
+//      $(function(){
+//      	console.log(openid);
+//      	$.ajax({
+//				type: "post",
+//				//url: config.baseUrl + "/deleLogin",
+//				async: false,
+//				dataType: 'json',
+//				data: {
+//					'uid':openid,
+//					'nick':name,
+//					'headimg':headimgurl,
+//					'gender':sex
+//				},
+//				success: function(data) {
+//					console.log(data);
+//					console.log(12);
+//					console.log(data.delegateInfo.nick);
+//					localStorage.setItem("gid",data.delegateInfo.gid);
+//					show(data.delegateInfo);
+//				}
+//		  });	
+//      });
+        function show(data)
+        {
+        	$('.nick').html(data.nick);
+        	$(".picture").attr("src",data.headimg);
+        	$('.money').val(data.money);
+        	$('.income').val(data.totalmoney);
+        	
+        }
+//		$("#gender_money").CSS('color','green');
+        
+    </script>
+		
+		
+	</body>
+
+</html>

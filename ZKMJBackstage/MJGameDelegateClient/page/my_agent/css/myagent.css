@@ -1,0 +1,62 @@
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.mui-bar{
+				background-color: black;
+			}
+			.backimg {
+				width: 30px;
+				margin-top: 5px;
+				float: left;
+			}
+			header a{
+				color: white;
+				margin-top: 4px;
+				float: left;
+				padding-right: 5px;
+				line-height: 35px;
+			}
+			.mui-title{
+				color: white;
+			}
+			.moreimg {
+				display: block;
+				float: right;
+				width: 30px;
+				margin-top: 6px;
+			}
+			.userphotoimg {				
+				border-radius: 5px;				
+			}
+			.userspan {
+				display: inline-block;				
+			}
+			.addrechargep{
+				color: #C06E55;
+			}
+			.delectbtn {
+				float: right;
+				color: white;
+				width: 4rem;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #FF867F;
+				background-color: #FF867F;
+				border-radius: 5px;
+				margin-top: -41px;
+			}
+			.rechargebtn {
+				float: right;
+				color: white;
+				margin-right: 10px;
+				width: 4rem;
+				text-align: center;
+				line-height: 40px;
+				background-color: #57CB44;
+				border: 1px solid #57CB44;
+				border-radius: 5px;
+				margin-top: -41px;
+			}
+			
+

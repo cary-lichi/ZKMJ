@@ -1,0 +1,51 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.mui-icon-image{
+	display: block;
+	width: 22px;
+	height: 22px;
+}
+
+.span1{
+	margin-top: 11px;
+	float: left;
+	color: white;
+}
+.mui-content{
+	margin-top: 20px;
+}
+.mui-input-group .mui-input-row{
+	height: 50px;
+	line-height: 50px;
+	line-height: 50px;
+}
+.mui-input-group .mui-input-row label{
+	width:30%; 
+	height: 50px;
+	line-height:30px; 
+	font-weight:500;
+	font-size: 0.3rem;
+}
+.mui-input-group .mui-input-row input{ 
+	height: 50px;
+	line-height: 50px; 
+	width:75%;
+}
+.mui-btn{
+	display: block;
+	color: white;
+	background-color: #1AAC19;
+	margin:20px auto;
+	width: 95%;
+	height: 50px;
+	border-radius: 0.2rem;
+	font-size: 18px;
+	outline: none;
+	border: none;
+}
+.footer input.placeholder{
+	color: white;
+}
+

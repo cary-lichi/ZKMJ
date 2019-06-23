@@ -1,0 +1,44 @@
+/*控制某部分字体*/
+.font_size1{font-size: 11px;font-family: '仿体';}
+/*中部*/
+/*控制content中按钮的大小和变化样式*/
+.btn-orange{background-color: rgb(255,175,26);border:1px solid rgb(255,175,26);}
+.btn-blue{background-color:#1193F3;border:1px solid #1193F3;}
+.btn-blue:active,.btu_no:active{background-color:rgb(17,177,250);}
+.btn-orange:active,.btu_no:active{background-color:rgb(255,142,59);}
+.td_btu_blue:active{background-color:rgb(21,113,250);}
+.btu_position{margin-top: 1.5rem;width:30rem;text-align:center;}
+.btu_green{background-color: rgb(40,211,0);border:1px solid rgb(40,211,0);
+}
+.btu_green:active{background-color:rgb(71,168,38);}
+/*控制单选框的样式*/
+.checkbox_position{margin-left:0.5rem; margin-top: 3rem;font-size: 1.2rem;}
+.checkbox_position span{margin-right: 1.5rem;}
+/*换页*/
+.change_page
+{
+	margin-top: 13.5rem;
+}
+.NextPage,.TurnToPage,.lastPage
+{
+	width: 3.5rem;
+	height: 3rem;
+	color: rgb(66,139,205);
+	cursor: pointer;/*调手*/
+}
+/*尾部*/
+.foot {
+	height: auto;
+}
+/*控制表格中按钮的样式*/
+.td_btu_small{width:3rem;height: 2.5rem;}
+.btu_yes{background-color: rgb(101,184,109);border: 1px solid rgb(101,184,109);}
+.btu_yes:active{background-color: rgb(40,186,9);}
+.btu_no{background-color: rgb(240,172,78);border: 1px solid rgb(240,172,78);}
+.td_btu_big{width: 7rem;height: 2.5rem;}
+.btu_red{background-color: rgb(255,66,80);border: 1px solid rgb(255,66,80);}
+.btu_red:active{background-color: rgb(201,0,0);}
+.td_btu_blue{background-color: rgb(36,158,246);border: 1px solid rgb(36,158,246);}
+.btu_grey{background-color: grey;border: 1px solid grey;}
+.red_true{ background-color: #FF4250;}
+

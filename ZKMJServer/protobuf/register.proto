@@ -1,0 +1,9 @@
+message RegisterRequest {//注册请求协议
+  required string sName = 1;//用户名
+  required string sPassWord = 2;//密码
+}
+
+message RegisterResponse {//注册响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional int32 nUserID = 2;//新生成的用户id
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<link href="../css/mui.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mui.min.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/my_information.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="../../../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../../../js/jquery-3.0.0.js" ></script>
+		<script type="text/javascript" src="../../../js/adapter.js"></script>
+		
+		<style type="text/css">
+			.mui-bar{background-color: black;}
+			
+		</style>
+	</head>
+	<body>
+		<!--<header  class="mui-bar mui-bar-nav" >
+			<span><img class="mui-icon-image span1" src="../img/return.png" /></span>
+			<h1 class="mui-title" style="color: white;" >代理后台 </h1>
+			<span class="span1" id="select_l">返回</span>	
+			<span class="span1" id="select_l" style="margin-left: 15px;">关闭</span>
+			<span><img class="mui-icon-image span1" style="float: right;" src="../img/etc.png" /> </span>
+		</header>-->
+		
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>代理编号</label>
+					<input id="agent_number" type="text"  placeholder="123456"/>
+				</div>
+				<div class="mui-input-row">
+					<label>ID</label>
+					<input id="agent_id" type="text" placeholder="123456"/>
+				</div>
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id="agent_account" type="text" placeholder="123456"/>
+				</div>
+				<div class="mui-input-row">
+					<label>姓名</label>
+					<input id="name" type="text" placeholder="多拉A不萌"/>
+				</div>
+				<div class="mui-input-row">
+					<label>代理等级</label>
+					<input id="agent_name" type="text" placeholder="一级"/>
+				</div>
+				
+				<div class="mui-input-row">
+					<label>加入时间</label>
+					<input id="join_time" type="text" placeholder="2018-3-31"/>
+				</div>
+			</form>
+		</div>
+		
+		<div class="footer">
+			<input class="mui-btn" id="submit" value="修改密码"/>
+			<!--<input id="submit" class="mui-btn" placeholder="修改密码" />-->
+		</div>
+		<script src="../../../js/jquery-3.0.0.js"></script>
+		<script src="../../../js/config.js"></script>
+		<script type="text/javascript" src="../../../js/common.js" ></script>
+		<script type="text/javascript" src="../js/my_information.js"></script>
+
+		<script>
+//			$.ajax({
+//				type:"post",
+//				url:config.baseUrl+"/deleGetChildren",
+//				async:true,
+//				data:{"id":1},
+//				dataType:'json',
+//				success:function(data)
+//				{
+//					console.log(data);
+//					console.log(123);
+//				},
+//				error:function(xhr,status,error)
+//				{
+//					console.log(error);
+//				}
+//			});
+		</script>
+	</body>
+</html>

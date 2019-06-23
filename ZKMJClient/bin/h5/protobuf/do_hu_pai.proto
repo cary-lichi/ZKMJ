@@ -1,0 +1,16 @@
+import "pai.proto";
+message DoHuPaiRequest {//胡牌请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai pai = 3;//胡的牌
+}
+
+message DoHuPaiResponse {//胡牌响应协议
+  required int32 nErrorCode = 1;//错误码
+}
+
+message DoHuPaiNotify {//胡牌通知协议
+  required int32 nUserID = 1;//胡用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai pai = 3;//胡的牌
+}

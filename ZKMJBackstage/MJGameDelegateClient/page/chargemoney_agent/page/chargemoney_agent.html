@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/mui.css" />
+		<link rel="stylesheet" href="../css/chargemoney_agent.css"/>
+		<link rel="stylesheet" href="../css/alertbox.css" />
+		<script src="../../../js/jquery-3.0.0.js"></script>
+		<script src="../../../js/adapter.js"></script>
+		<script type="text/javascript" src="../../../js/config.js" ></script>
+		<script type="text/javascript" src="../../../js/common.js" ></script>
+		<style type="text/css">
+			.cover{
+				position: fixed;
+				z-index: 100;
+				top: 0;
+				left: 0;
+				display: block;
+				width: 100%;
+				height: 100%;
+				opacity: 0.5;
+				background: gray none repeat scroll 0% 0%;
+			}
+		</style>
+		
+	</head>
+	<body >
+		<div class="cover" style="display: none;"></div>
+		<!--头部-->
+		<!--<header class="mui-bar mui-bar-nav" >
+			<span><a href="#"><img class="mui-icon-image span1" src="../img/return.png"  /></a></span>
+			<h1 class="mui-title"  style="color: #fff;">代理后台 </h1>
+			<span class="span3" style="color: #fff;"><a href="#">返回</a></span>	
+			<span class="span3"  style="color: #fff;"><a href="#">关闭</a></span>
+			<span><a href="#"><img class="mui-icon-image span2"  src="../img/etc.png" /></a> </span>
+		</header>-->
+    	<!--表单-->
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row"  style="height: 150px;"><label>代理名称：</label><input class="rnick" type="text" /></div>
+				<div class="mui-input-row" style="height: 150px;"><label>代理编号：</label><input class="rid" type="text" /></div>
+				<div class="mui-input-row" style="height: 150px;"><label>钻石数量：</label><input class="diamond_num" type="number"  value="124"/></div>
+				<div class="mui-input-row" style="height: 150px;">
+					<label style="width:280px;">购买钻石数量：</label>
+					<input id="buy_diamond" type="number" style="width:550px;background-image: url(../img/bg_img.png);color: #EF4300;background-size: 50% 1100px;" />
+				</div>
+				<div class="mui-input-row" style="height: 150px;">
+					<label style="width:280px;">退回钻石数量：</label>
+					<input id="back_diamond" type="number" style="width:550px;background-image: url(../img/bg_img.png);color: #EF4300;background-size: 50% 1100px;" />
+				</div>
+
+				<!--<div class="mui-input-row" style="height: 150px;"><label style="width:280px;">购买钻石数量：</label><input type="number" style="width:550px;background-image: url(../img/bg_img.png);color: #EF4300;background-size: 50% 1100px;"  value="123456"/></div>
+				<div class="mui-input-row" style="height: 150px;"><label style="width:280px;">退回钻石数量：</label><input type="number" style="width:550px;background-image: url(../img/bg_img.png);color: #EF4300;background-size: 50% 1100px;"/></div>-->
+
+			</form>
+		</div>
+		<!--尾部-->
+		<div class="footer"><button id="submit" class="mui-btn">确认</button></div>
+		
+		<!--弹框-->
+		<div class="alertbox" style="display: none;">
+			<span class="head">操作</span>
+			<ul class="box">
+				<li>
+					<label>钻石数量:</label>
+					<input type="text" id="diamond-count" value="123" />
+				</li>
+				<li>
+					<label> 操作类型:</label>
+					<input type="text" id="handle-type" value="购买钻石" />
+				</li>
+			</ul>
+
+			<ul class="b-confirm">
+				<li style="border-right: solid 1px grey;"> <button id="b-yes">确认</button> </li>
+				<li> <button id="b-no">取消</button> </li>
+			</ul>
+
+		</div>
+
+		<!--弹框1-->
+		<div class="alertbox1" style="display: none;">
+			<span class="head">操作</span>
+			<ul class="box">
+				<li>
+					<label>钻石数量:</label>
+					<input type="text" id="diamond-count1" value="123" />
+				</li>
+				<li>
+					<label> 操作类型:</label>
+					<input type="text" id="handle-type1" value="退回钻石" />
+				</li>
+			</ul>
+
+			<ul class="b-confirm">
+				<li style="border-right: solid 1px grey;"> <button id="b-yes1">确认</button> </li>
+				<li> <button id="b-no1">取消</button> </li>
+			</ul>
+
+		</div>
+		
+		<script type="text/javascript" src="../../../js/mui.js" ></script>
+		
+		<script type="text/javascript">
+		//获取rid
+			var rid=window.location.search;
+			rid=rid.substr(5,rid.length);
+			//通过id获取代理信息
+				$.ajax({
+				type:"post",
+				url:config.baseUrl+"/deleGetdele",
+				async:true,
+				dataType:'json',
+				data:{'id':rid},
+				success:function(data){
+					console.log(data);
+					if(data.errorcode==0){
+						$(".rnick").val(data.deleInfo[0].nick);
+						$(".rid").val(data.deleInfo[0].id);
+						$(".diamond_num").val(data.deleInfo[0].money);
+					}
+				},
+				error:function(xhr,status,error){
+					console.log(error);
+			    }
+		});	
+			
+			
+			
+			$(".cover").hide();
+			
+			$("#submit").click(function() {
+				 
+				var buy_diamond=$("#buy_diamond").val();
+			    var back_diamond=$("#back_diamond").val();
+				if(buy_diamond==""&&back_diamond=="")
+				{
+					mui.toast("请输入购买钻石数或退回钻石数！");
+				}
+				
+				//购买钻石弹框
+				if(buy_diamond!=""){
+					$(".cover").show();
+					$('.alertbox').css('display','block');
+					$("#diamond-count").val(buy_diamond);
+					$("#b-yes").on('click',function(){
+						$(".alertbox").hide();
+						$(".cover").hide();
+						//购买接口
+						$.ajax({
+							type:"post",
+							url:config.baseUrl+"/deleRecharge",
+							async:true,
+							data:{
+								'id':did,
+								'rid':rid,
+								'money':buy_diamond
+							},
+							dataType:'json',
+							success:function(data){
+								console.log(data);
+								if(data.errorcode==0){
+									$('.diamond_num').val(data.rmoney);
+									localStorage.setItem('money',data.money);
+								}
+								window.location.reload();
+							},
+							error:function(xhr,status,error){
+								console.log(error);
+					        }
+						});
+						
+					});
+					$("#b-no").click(function(){
+						$(".alertbox").hide();
+						$(".cover").hide();
+					});
+				}
+				//弹出退回钻石框
+				else if(back_diamond!=""){
+					$(".cover").show();
+					$(".alertbox1").show();
+					$("#diamond-count1").val(back_diamond);
+					$("#b-yes1").click(function(){
+						
+						$(".alertbox1").hide();
+						$(".cover").hide();
+					});
+					$("#b-no1").click(function(){
+						$(".alertbox1").hide();
+						$(".cover").hide();
+					});
+				}
+				
+			});
+		
+		</script>
+		
+		
+	</body>
+</html>
+	

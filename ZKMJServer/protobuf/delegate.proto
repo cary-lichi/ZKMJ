@@ -1,0 +1,15 @@
+message DelegateRequest {//托管请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID = 2;//房间ID
+  optional bool bDo = 3;//是否托管
+}
+
+message DelegateResponse {//托管响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional bool bDo = 2;//是否托管
+}
+
+message DelegateNotify {//托管通知协议
+  required int32 nUserID = 1;//用户ID
+}
+

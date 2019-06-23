@@ -1,0 +1,19 @@
+import "gameplay.proto";
+import "assets.proto";
+
+message CreateRoomRequest {//创建房间请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sCardType = 2;//房卡类型
+  required GamePlay gamePlay = 3;//玩法类型
+  required int32 nPlayers = 4;//多少人
+}
+
+message CreateRoomResponse {//创建房间响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional string sRoomID  = 2;//房间ID
+  optional string sCardType = 3;//房卡类型
+  optional GamePlay gamePlay = 4;//玩法类型
+  optional int32 nPlayers = 5;//多少人
+  optional AssetUpdate newAssets = 6;//新资产
+}
+

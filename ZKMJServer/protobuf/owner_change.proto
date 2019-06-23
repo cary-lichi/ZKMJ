@@ -1,0 +1,3 @@
+message OwnerChangeNotify {//房主转让通知
+  required int32 nOwnerID = 1;//用户ID
+}

@@ -1,0 +1,40 @@
+import "assets.proto";
+message RankRecord {//排行信息
+  required int32 nUserID = 1;//用户ID
+  required int32 nWinCount = 2;//胜利局数
+  required int32 nScore = 3;//总分数
+  optional string sName = 4;//用户昵称
+  optional string sHeadimg = 5;//用户头像
+  optional int32 nRank = 6;//用户排名
+  optional int32 nRankAward = 7;//用户可领多少奖励
+  optional int32 nRankAwardType = 8;//用户可领奖励类型，1钻石 2金币
+  optional bool bCanAward  = 9;//用户是否领过奖励
+}
+
+message RankRecordAll{//排行信息
+  required RankRecord rankRequster = 1;//请求者排行信息
+  repeated RankRecord rankRecords = 2;//前100名排行信息
+}
+
+message RankRequest {//排行榜请求协议
+  required int32 nUserID = 1;//用户ID
+}
+
+message RankResponse {//排行榜响应协议
+  required int32 nErrorCode = 1;//错误码
+  required RankRecordAll rankDayRecords = 2;//日排行信息
+  required RankRecordAll rankWeekRecords = 3;//周排行信息
+  required RankRecordAll rankMonthRecords = 4;//月排行信息
+  required RankRecordAll rankYearRecords = 5;//年排行信息
+}
+
+
+message RankAwardRequest {//排行领奖请求协议
+  required int32 nUserID = 1;//用户ID
+  required int32 nRankType = 2;//日0、周1、月2、年3
+}
+
+message RankAwardResponse {//排行领奖响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional AssetUpdate newAssets = 2;//新资产
+}

@@ -1,0 +1,17 @@
+message BroadCast {//公告
+  required int32 nID = 1;//公告ID
+  required string sTitle = 2;//公告标题
+  required string sDetail = 3;//公告详情
+  required string sDate = 4;//公告日期
+}
+
+
+message BroadCastRequest {//公告拉取请求协议
+  required int32 nUserID = 1;//用户ID
+}
+
+message BroadCastResponse {//公告响应协议
+  required int32 nErrorCode = 1;//错误码
+  repeated BroadCast bPool = 2;//公告信息列表
+}
+

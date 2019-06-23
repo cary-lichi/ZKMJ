@@ -1,0 +1,53 @@
+.ycx,.hdx{
+			display: block;
+			float: left;
+			padding-left: 10px;
+		}
+.middle-bottom-left label {
+			font-size: 20px;
+			cursor: pointer;
+			line-height: 19px;
+		}
+		
+.middle-bottom-left label i {
+			font-size: 20px;
+			font-style: normal;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			color: #fff;
+			vertical-align: middle;
+			/*margin: -2px 2px 1px 0px;*/
+			/*margin-left: 3rem;*/
+			/*margin-top: -1.5rem;
+			margin-left: -85rem;*/
+			border: #2489c5 1px solid;
+			/*position: relative;*/
+		}
+		
+.middle-bottom-left input[type="checkbox"],
+		input[type="radio"] {
+			display: none;
+		}
+		
+.middle-bottom-left input[type="radio"]+i {
+			border-radius: 10px;
+		}
+		
+.middle-bottom-left input[type="checkbox"]:checked+i,
+		input[type="radio"]:checked+i {
+			background: #2489c5;
+		}
+		
+.middle-bottom-left input[type="checkbox"]:disabled+i,
+		input[type="radio"]:disabled+i {
+			border-color: #ccc;
+		}
+		
+.middle-bottom-left input[type="checkbox"]:checked:disabled+i,
+		input[type="radio"]:checked:disabled+i {
+			background: #ccc;
+		}
+

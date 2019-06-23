@@ -1,0 +1,8 @@
+import "pai.proto";
+
+
+message GetPaiNotify {//起牌通知协议，通知给所有玩家
+  required int32 nUserID = 1;//用户ID
+  required Pai getPai = 2;//起的牌
+  required int32 nLeft = 3;//剩余的牌数量
+}

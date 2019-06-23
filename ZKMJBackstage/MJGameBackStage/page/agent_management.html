@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>代理管理</title>
+		<link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/agent_management.css" />
+	</head>
+	<body>
+		<div id="container">
+		   
+		    <!--<div id="topper">
+		    	<div class="menu">
+		    		<div class="logo">
+				         <img src="../img/logo.png" />
+			        </div>
+			        <div class="menu_right">
+			           <div class="login">
+				            <span class="user">当前用户：<span id="current_name">lea</span></span>
+				            <img src="img/退出.png" class="dcimg" />
+				            <span class="exit" id="logout" style="cursor: pointer;"><a style="color: #757575;">退出登录</a></span>
+			            </div>
+		    		    <div class="menu_list">
+		    			    <ul>
+		    				    <li><a href="play_management.html">玩家管理</a></li>
+		    				    <li style="background-color:#FFFFFF; border-radius: 0.8rem;"><a href="agent_management.html">代理管理</a></li>
+		    				    <li><a href="#">订单查询</a></li>
+		    				    <li><a href="#">日志查询</a></li>
+		    				    <li><a href="#">公告发布</a></li>
+		    				    <li><a href="#">福利发放</a></li>
+		    				    <li><a href="#">分享奖励</a></li>
+		    				    <li><a href="#">账号管理</a></li>
+		    			    </ul>
+		    		    </div>
+		    			
+		    	    </div>
+		    		
+		    </div>
+			
+		    
+		    </div>-->
+		
+		    <div id="middle">
+		    	<div class="form_left">
+		    		<form>
+		    			<ul>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">代理全局id</span>
+		    			        <input class='agentAllID' type="text"  />
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">代理本地id</span>
+		    			        <input class="agentLocalID" type="text"  />
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">昵称</span>
+		    			        <input class="nick" type="text"  />
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">设备码</span>
+		    			        <input class="equipid" type="text"  />
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">代理等级</span>
+		    			        <input class="select" type="text"  />
+		    		        </li>
+		    		        <li class="btu_position">
+		    		    	    <button type="button" id="search" class="btu btu_style btn-orange">搜索</button>	
+		    		        </li>
+		    		    </ul>
+		    		    <div class="checkbox_position">
+		    		    	<ul>
+		    		    		<li class="form_left_checkbox_li">
+		    		    			<input type="radio" name="state" checked="checked" value="all" />
+		    		    			<label>全部</label>
+		    		    		</li>
+		    		    		<li class="form_left_checkbox_li">
+		    		    			<input type="radio" name="state" value="online" />
+		    		    			<label>在线</label>
+		    		    		</li>
+		    		    		<li class="form_left_checkbox_li">
+		    		    			<input type="radio" name="state" value="outline" />
+		    		    		    <label>离线</label>
+		    		    		</li>
+		    		    		<li class="form_left_checkbox_li">
+		    		    			<input type="radio" name="state" value="firstDele" />
+		    		    			<label>一级代理</label>
+		    		    		</li>
+		    		    		<li class="form_left_checkbox_li">
+		    		    			<input type="radio" name="state" value="secondDele" />
+		    		    			<label>二级代理</label>
+		    		    		</li>
+		    		    		<li class="form1_checkbox_li">
+		    		    			<input type="radio" name="state" value="threeDele" />
+		    		    			<label>三级代理</label>
+		    		    		</li>
+		    		    	</ul>
+		    		
+		    		    </div>
+		    			
+		    		    
+		    	   </form>
+		    		
+		    	</div>
+		    	<div class="form_right">
+		    		<form>
+		    		    <ul>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">代理本地id</span>
+		    			        <input class="agentLocalID" type="text"  id="agentLocalID"/>
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">昵称</span>
+		    			        <input class="nick" type="text"  />
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">代理等级</span>
+		    			        <input class="select" type="text"  />
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">钻石代价</span>
+		    			        <input class="" type="text"  />
+		    		        </li>
+		    		        <li class="form_wrap">
+		    			        <span class="form_inner_l font_size1">钻石数量</span>
+		    			        <input class="" type="text"  />
+		    		        </li>
+		    		        <li class="btu_position">
+		    		    	    <button type="button" class="btu btu_style btu_green charge-money" id="charge-money">充值</button>	
+		    		    	    <button type="button" class="btu btu_style btu_blue">添加</button>
+		    		    	    <!--充值操作-->
+		    		    	    <div class="charge-money-list" style="padding-top: 1rem;margin-top: 0.5rem;height: 12rem;width: 20rem;background-color: yellow;display: none;position:absolute;z-index: 1rem;">
+		    		    	    	<h3>操作</h3>
+		    		    	    	<div class="" style="text-align: left;margin-top: 0.5rem;padding-left: 1.5rem;font-size: 1.3rem;">
+		    		    	    		<label>钻石数额</label>
+		    		    	    		<input type="text" class="value-money" style="width: 9.6rem;margin-left: 1.5rem;" />
+		    		    	    		<!--<select class="charge-type" style="width: 10rem;margin-left: 1.5rem;">
+		    		    	    			<option>金币</option>
+		    		    	    			<option>钻石</option>
+		    		    	    		</select>-->
+		    		    	    	</div>
+		    		    	    	<div class="" style="text-align: left;margin-top: 0.5rem;padding-left: 1.5rem;font-size: 1.3rem;">
+		    		    	    		<label>金币数额</label>
+		    		    	    		<input type="text" class="value-gold" style="width: 9.6rem;margin-left: 1.5rem;" />
+		    		    	    	</div>
+		    		    	    	<div style="margin-top: 2rem;height:4rem;width: 20rem;">
+		    		    	    		<button type='button' id="charge-sure" class='btu td_btu_big btu_green' style="margin-left: 0rem;">确定</button>
+		    		    	    	    <button type='button' id="charge-quit" class='btu td_btu_big btu_red' style="margin-left: 1rem;">取消</button>
+		    		    	    	</div>
+		    		    	    </div>
+		    		        </li>
+		    		        <li class="change_page" style="position: relative;">
+		    		        	<div class="change_page_btu">
+		    		        		<label class="font_size1"><span class="pageNum">1</span>/<span class="countNum">67</span></label>
+		    		        		<span class="font_size1 lastPage">上一页</span>
+		    		        	    <span class="font_size1 NextPage">下一页</span>
+		    		                <span class="font_size1 TurnToPage">跳转</span>
+		    		        	</div>
+		    		        	<div class="change_page_text">
+                                    <span class="page font_size1">页码</span>
+                                    <input type="number" value="1" class="page_input" /> 
+                                    <div class="triangle_wrep reduce">
+                                    	<img src="../img/上三角.png" class="triangle"/>
+                                    </div>
+                                   <div class="triangle_wrep add">
+                                   	    <img src="../img/下三角.png" class="triangle"/>
+                                   </div>
+                                </div>
+		    		        </li>
+		    		    </ul>
+		    		    
+		    	   </form>
+		    		
+		    	</div> 
+		    	
+		    </div>
+		    <!--middle结束-->
+		    
+		    <div id="footer">
+		       <table class="table_style" cellspacing="0">
+		       	 <thead>
+		       	   <tr>
+		       		    <!--<th class="th1">账号</th>-->
+		       		    <th class="th1">代理全局Id</th>
+		       		    <th class="th1">账号</th>
+		       		    <th class="th2">代理本地Id</th>
+		       		    <th class="th2">昵称</th>
+		       		    <th class="th4">性别</th>
+		       		    <th class="th4">在线</th>
+		       		    <th class="th1">登录时间</th>
+		       		    <th class="th7">钻石</th>
+		       		    <th class="th7">充值额</th>
+		       		    <th class="th7">平台奖励</th>
+		       		    <th class="th7">剩余钻石</th>
+		       		    <th class="th2">分享奖励</th>
+		       		    <th class="th2">首次拉人奖励</th>
+		       		    <th class="th2">分级贡献奖励</th>
+		       		    <th class="th1">活动奖励</th>
+		       		    <th class="th15">设备码</th>
+		       		    <!--<th class="th2">剔出</th>-->
+		       		    <!--<th class="th2">封禁</th>-->
+		       		    <th class="th4">上级代理Id</th>
+		       		    <th class="th2">权限</th>
+		       		    <th class="th2">&nbsp;</th>
+		       	  </tr>
+		       	 </thead> 
+		       	 <tbody class="test">
+		         </tbody>
+		       </table>
+		    </div>
+		    <!--footer结束-->
+	</div>	
+	<!--container结束-->
+	    <script type="text/javascript" src="../js/jquery-3.0.0.js" ></script>
+	    <script type="text/javascript" src="../js/config.js" ></script>
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script type="text/javascript" src="../js/agent_management.js" ></script>
+		<script type="text/javascript" src="../js/play&&agent.js" ></script>
+<!--		<script type="text/javascript" src="../js/checkToken.js" ></script>-->
+		<script type="text/javascript">
+			var height=document.getElementsByTagName('body')[0].clientHeight;
+			var par = window.parent.document.getElementById('myiframe');
+			par.style.height=height + 'px';
+		</script>
+		
+	</body>
+</html>

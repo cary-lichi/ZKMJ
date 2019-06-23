@@ -1,0 +1,59 @@
+message User{//用户
+  required int32 nUserID = 1;//用户id
+  optional string sNick = 2;//用户昵称
+  optional int32 nExp = 3;//用户经验值
+  optional int32 nGold = 4;//用户游戏币
+  optional int32 nMoney = 5;//用户钻石
+  optional string sHeadimg = 6;//用户头像
+  optional string sPhone = 7;//用户电话
+  optional string sRecords = 8;//用户对局记录
+  optional string sAssets = 9;//用户资产
+  optional string sRoom = 10;//用户当前所在房间（断线重连）
+  optional int32 nParent = 11;//用户引荐者
+  optional string sICode = 12;//用户引荐码
+  optional string sName = 13;//用户名称
+  optional bool bLuckyToday = 14;//当天是否已经玩过大转盘
+  optional bool bWelfareToday = 15;//当天是否已经领过福利
+  optional int32 nGender = 16;//用户性别
+  repeated bool bRkAwardFlags = 17;//用户是否领过排行奖励标志[日，周，月，年]
+  optional bool bShareAwardWeek = 18;//本周是否已经领过分享奖励
+  optional int32 nWinCount = 19;//用户胜利局数
+  optional int32 nTotalCount = 20;//用户总局数
+  optional string sIP = 21;//用户远程ip
+  optional string sToken = 22;//用户Token信息
+  optional Location location = 23;//用户位置信息
+}
+message Location{//位置信息
+  required bool bIsLocation = 1;//是否开定位
+  optional string sLng = 2;//获取到的经度
+  optional string sLat = 3;//获取到的纬度
+  optional string sAddress = 4;//用户位置信息
+}
+
+message LoginRequest {//登录请求协议
+  required string sName = 1;//用户名
+  required string sPassWord = 2;//密码
+  optional Location location = 3;//用户位置信息
+}
+
+message LoginWXRequest {//微信登录请求协议
+  required string sOpenID = 1;//用户名
+  optional string sNick = 2;//昵称
+  optional string sHeadImage = 3;//头像URL
+  optional int32 nGender = 4;//用户性别
+  optional string iCode = 5;//邀请码
+  optional Location location = 6;//用户位置信息
+}
+message LoginResponse {//登录响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional User requester = 2;//用户信息
+  optional int32 rookieAward = 3;//新手奖励类型，
+  //0：2钻石（玩家分享进入） 1：5钻石（官方）2：10钻石（官方）,3:0.5元（官方）
+}
+
+message LoginOutRequest {//登录退出请求协议
+  required int32 nUserID = 1;//用户ID
+}
+message LoginOutResponse {//登录退出响应协议
+  required int32 nErrorCode = 1;//错误码
+}

@@ -1,0 +1,17 @@
+message Mail {//邮件
+  required int32 nID = 1;//邮件ID
+  optional int32 nUID = 2;//用户ID
+  optional int32 nType = 3;//邮件类型
+  optional string sContent = 4;//邮件内容
+  optional string sTime = 5;//邮件时间
+}
+
+message MailRequest {//拉取邮件请求协议
+  required int32 nUserID = 1;//用户ID
+}
+
+message MailResponse {//拉取邮件响应协议
+  required int32 nErrorCode = 1;//错误码
+  repeated Mail mails = 2;//邮件
+}
+

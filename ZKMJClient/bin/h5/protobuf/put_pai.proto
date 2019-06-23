@@ -1,0 +1,21 @@
+import "pai.proto";
+message PutPaiRequest {//出牌请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai putPai = 3;//出的牌
+}
+
+message PutPaiResponse {//出牌响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional Pai putPai = 2;//出的牌
+}
+message PutPaiNotify {//玩家出牌通知协议
+  required int32 nUserID = 1;//用户ID
+  required Pai putPai = 2;//出的牌
+}
+
+message DoPutPaiNotify {//服务器通知玩家出牌协议
+  required int32 nUserID = 1;//用户ID
+  required int32 nPutState = 2;//是正常打牌：0  摸听打牌：1 抢听打牌：2
+  repeated CanHuPaiPool huPais = 3;//打完可以听的牌，可能胡牌列表
+}

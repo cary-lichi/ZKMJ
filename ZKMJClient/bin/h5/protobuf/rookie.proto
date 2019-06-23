@@ -1,0 +1,38 @@
+import "assets.proto";
+
+message RookieRecord {//新手奖励记录
+  required int32 nUserID = 1;//用户ID
+  required string nUserNick = 2;//用户昵称
+  required int32 nInviteTime = 3;//用户接受邀请时间
+}
+
+message RookieRequest {//领取新手奖励请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sICode = 2;//邀请码
+}
+
+message RookieResponse {//领取新手奖励响应协议
+  required int32 nErrorCode = 1;//错误码
+  required AssetUpdate newAssets = 2;//新资产
+}
+
+message IRookieRequest {//领取新手邀请奖励请求协议
+  required int32 nUserID = 1;//用户ID
+  required int32 nAwards = 2;//奖励用户数量
+}
+
+message IRookieResponse {//领取新手奖励邀请响应协议
+  required int32 nErrorCode = 1;//错误码
+  required AssetUpdate newAssets = 2;//新资产
+}
+
+message IRookieShowRequest {//新手邀请记录请求协议
+  required int32 nUserID = 1;//用户ID
+}
+
+message IRookieShowResponse {//新手邀请记录响应协议
+  required int32 nErrorCode = 1;//错误码
+  required int32 nAwardCount = 2;//奖励的4圈房卡数量
+  repeated RookieRecord records = 3;//记录列表
+}
+

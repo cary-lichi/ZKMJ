@@ -1,0 +1,10 @@
+message RechargeRequest {//充值请求协议
+  required int32 nUserID = 1;//用户ID
+  required int32 nRMB = 2;//充值数量
+}
+
+message RechargeResponse {//充值响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional int32 nCrystal = 2;//玩家当前钻石
+}
+

@@ -1,0 +1,55 @@
+message Pai{//牌
+  required int32 nType = 1;//牌类型
+  required int32 nValue = 2;//牌数值
+}
+
+message ChiPai{//牌
+  required int32 nType = 1;//牌类型
+  required int32 nValue1 = 2;//牌数值
+  required int32 nValue2 = 3;//牌数值
+  required int32 nValue3 = 4;//牌数值
+}
+
+message PengPai{//牌
+  required int32 nType = 1;//牌类型
+  required int32 nValue = 2;//牌数值
+}
+
+message GangPai{//牌
+  required int32 nType = 1;//牌类型
+  required int32 nValue = 2;//牌数值
+  required int32 nGangState = 3;//  0: 暗杠 1:自摸明杠 2:正常明杠
+  }
+
+message OrderPai{//吃碰杠需要有次序
+  optional Pai pai = 1;
+  optional ChiPai chipai = 2;
+  optional PengPai pengpai = 3;
+  optional GangPai gangpai = 4;
+}
+
+message PaiPool{//牌
+  required int32 nType = 1;//牌类型
+  repeated int32 nValue = 2;//牌数值
+}
+
+message CanHuPai{//牌池
+  required Pai pai = 1;//可以胡的牌
+  required int32 count = 2;//除了牌面上的剩余数量
+}
+
+message CanHuPaiPool{//牌池
+  required Pai pai = 1;//可以听的牌
+  repeated CanHuPai pool = 2;
+}
+
+message GamerPaiPool{//牌
+  required int32 nID = 1;//玩家id
+  repeated PaiPool pool = 2;//牌池
+  repeated PaiPool chiPool = 3;//牌池
+  repeated PaiPool pengPool = 4;//牌池
+  repeated PaiPool mGangPool = 5;//牌池
+  repeated PaiPool aGangPool = 6;//牌池
+  repeated PaiPool putPool = 7;//牌池
+  repeated OrderPai orderPai = 8;//
+}

@@ -1,0 +1,24 @@
+import "pai.proto";
+
+message DoChiPaiRequest {//吃牌请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai pai = 3;//吃的牌
+  required int32 nChiIndex = 4;//吃的牌组合索引
+}
+
+message DoChiPaiResponse {//吃牌响应协议
+  required int32 nErrorCode = 1;//错误码
+  required int32 nLastID = 2;//上一个打牌用户ID
+  required Pai lastPai = 3;//上一个打的牌
+  required int32 nChiIndex = 4;//吃的牌组合索引
+  required ChiPai pai = 5;//吃的牌
+}
+
+message DoChiPaiNotify {//吃牌通知协议
+  required int32 nUserID = 1;//吃用户ID
+  required string sRoomID  = 2;//房间ID
+  required ChiPai pai = 3;//吃的牌
+  required int32 nLastID = 4;//上一个打牌用户ID
+  required Pai lastPai = 5;//上一个打的牌
+}

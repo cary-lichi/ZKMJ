@@ -1,0 +1,15 @@
+import "pai.proto";
+message GuoPaiRequest {//过牌请求协议
+  required int32 nUserID = 1;//过牌用户ID
+  required string sRoomID  = 2;//过牌用户房间D
+  required int32 nType= 3;//1：自摸胡  2：自摸听  3 自摸杠(暗杠，碰杠) 4 吃碰杠听胡（别人打）
+}
+
+message GuoPaiResponse {//过牌响应协议
+  required int32 nErrorCode = 1;//错误码
+}
+
+message GuoPaiNotify {//过牌通知协议
+  required int32 nUserID = 1;//过牌用户ID
+  required string sRoomID  = 2;//过牌用户房间ID
+}

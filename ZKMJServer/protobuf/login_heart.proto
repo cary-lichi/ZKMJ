@@ -1,0 +1,10 @@
+message LoginHeartRequest {//登录心跳请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sToken = 2;//token
+}
+
+message LoginHeartResponse {//登录心跳请求响应
+  required int32 nErrorCode = 1;//错误码
+  optional int32 nHappyNum = 2;//欢乐场用户数
+
+}

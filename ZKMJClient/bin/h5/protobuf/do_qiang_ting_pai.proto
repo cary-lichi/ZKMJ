@@ -1,0 +1,27 @@
+import "pai.proto";
+message DoQiangTingPaiRequest {//抢听牌请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai pai = 3;//抢听的牌
+  required int32 nChiIndex = 4;//只有可碰可吃的情况下抢听，nChiIndex代表吃组合索引，如果是碰为-1
+}
+
+message DoQiangTingPaiResponse {//抢听牌响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional int32 nChiIndex = 2;
+  required int32 nLastID = 3;//上一个打牌用户ID
+  required Pai lastPai = 4;//上一个打的牌
+  required Pai pai = 5;//听的牌
+  optional ChiPai chipai = 6;//吃的牌
+  optional Pai pengpai = 7;//碰的牌
+}
+
+message DoQiangTingPaiNotify {//抢听牌通知协议
+  required int32 nUserID = 1;//吃用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai pai = 3;//听的牌
+  optional ChiPai chipai = 4;//吃的牌
+  optional Pai pengpai = 5;//碰的牌
+  required int32 nLastID = 6;//上一个打牌用户ID
+  required Pai lastPai = 7;//上一个打的牌
+}

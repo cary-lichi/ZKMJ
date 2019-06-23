@@ -1,0 +1,10 @@
+import "assets.proto";
+message WelfareRequest {//救济金领取请求协议
+  required int32 nUserID = 1;//用户ID
+}
+
+message WelfareResponse {//救济金领取响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional AssetUpdate newAssets = 2;//新资产
+}
+

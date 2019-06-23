@@ -1,0 +1,79 @@
+.item{
+	display: block;
+	margin-left:20px;
+	font-size: 12px;
+	float:left;
+}
+.item ul li{
+	display: block;
+	width: 240px;
+	margin-top: 15px;
+	background-color: white;
+	border: solid darkgray 1px;
+	border-radius: 5px;
+}
+.item span{
+	background-color:#F0F0F0;
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	float: left;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.item ul li input{
+	margin-left: 0px;
+	display: block;
+	height: 26px;
+	border: none;
+	outline: none;
+	padding-left: 5px;
+}
+.search{
+	height: 24px;
+	line-height: 24px;
+	margin-left:12px;
+	margin-top: 60px;
+}
+.list{
+	display: block;
+	float:left;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+.list ul li{
+	padding-left:10px;
+	width: 120px;
+	height: 40px;
+	font-size: 14px;
+	color:dodgerblue;
+	float: none;
+	line-height: 40px;
+}
+.list ul li:hover{
+	cursor: pointer;
+	background-color: #EFEFEF;
+}
+/*.list ul li:active{
+	background-color: #EFEFEF;
+}*/
+.tab{
+     width:1000px; 
+    margin-left: 30px;
+     display: block;
+	text-align: center;
+}
+.tab thead tr td{
+	font-weight: 400;
+	border-right: solid 1px #808080;
+}
+.tab tbody tr td{
+	border-right: solid 1px #808080;
+}
+#color tr:nth-child(odd){
+	background-color: #FEFFEF;
+}
+#color tr:nth-child(even){
+	background-color: #FFF38F;
+}

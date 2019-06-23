@@ -1,0 +1,93 @@
+*{margin: 0;padding: 0;}
+/*头部*/
+.mui-bar{
+	background-color: #000;
+	height: 120px;
+	font-size: 45px;
+	line-height: 120px;
+	position: relative;
+	
+}
+.span3{margin-right: 10px;}
+.span3 a{color:#fff;}
+.mui-title{font-size: 45px;line-height: 120px;}
+/*返回三角*/
+.span1{width: 60px;height: 60px;float: left;margin: 30px 0px 10px 20px;}
+/*三个点*/
+.span2{width: 60px;height: 60px;float: right;margin: 20px;}
+/*表单*/
+.mui-input-row{display:block;padding: 0;}
+.mui-input-row input{margin-top: 24px;margin-bottom: 20px;height: 105px;margin-right: 100px;border-radius: 15px;background-size:contain;  font-size: 40px;padding: 0;height: 80%;line-height: 105px;}
+.mui-input-row label{line-height: 150px;font-size: 40px;width: 200px;margin-left: 20px;padding: 0;}
+.mui-btn{color:#fff;font-size:40px;display: block;width: 930px;background-color: #1AAC19;height: 120px;border-radius: 10px;margin: 80px 20px 0px 20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**{
+	padding: 0;
+	margin: 0;
+}
+.mui-icon-image{
+	display: block;
+	width: 22px;
+	height: 22px;
+}
+
+.span1{
+	margin-top: 11px;
+	float: left;
+	color: white;
+}
+.mui-content{
+	margin-top: 20px;
+}
+.mui-input-group .mui-input-row{
+	height: 50px;
+	line-height: 50px;
+	line-height: 50px;
+}
+.mui-input-group .mui-input-row label{
+	width:25%; 
+	height: 50px;
+	line-height:30px; 
+	font-weight:500;
+	font-size: 0.7rem;
+}
+.mui-input-group .mui-input-row input{ 
+	height: 50px;
+	line-height: 50px; 
+	width:75%;
+}
+.mui-btn{
+	display: block;
+	color: white;
+	background-color: #1AAC19;
+	margin:20px auto;
+	width: 95%;
+	height: 50px;
+	border-radius: 10px;
+	font-size: 18px;
+}
+.footer input.placeholder{
+	color: white;
+}*/

@@ -1,0 +1,6 @@
+message GamePlay {//玩法
+  required int32 nType = 1;//玩法大类型（哈尔滨、牡丹江）
+  repeated int32 optionals = 2;//可选玩法列表
+}
+
+

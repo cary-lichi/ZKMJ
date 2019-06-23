@@ -1,0 +1,85 @@
+message GamePlay {//玩法
+  required int32 nType = 1;//玩法大类型（哈尔滨、牡丹江）
+  repeated int32 optionals = 2;//可选玩法列表
+}
+
+ /*
+
+        "common":
+            {#周口玩法
+               "id":1,
+               "optionals":
+                   {
+                       "zimo": 101,  # 自摸
+                       "dianpao": 102,  # 点炮
+                   }
+            },
+        "dongbei":
+            {#东北玩法
+                "id":2,
+                "optionals":
+                    {
+                        "zimo": 201,  # 自摸
+                        "dianpao": 202,  # 点炮
+                        "bao": 203,  # 摸宝
+                        "baozhongbao": 204  # 宝中宝
+                    }
+            },
+        "haerbin_common":
+            {  # 哈尔滨传统玩法
+                "id": 3,
+                "optionals":
+                    {
+                        "hongzhong": 301  # 红中满天飞
+                    }
+            },
+        "haerbin_jiahu":
+            {  # 哈尔滨夹胡玩法
+                "id": 4,
+                "optionals":
+                    {
+                        "hongzhongbao": 401,  # 红中当宝
+                        "hongzhong": 402,  # 红中满天飞
+                        "dafeng": 403,  # 刮大风
+                        "duibao": 404,  # 对宝
+                        "bianhu": 405,  # 边胡
+                        "dandiao":406,  # 单吊算夹：听牌时，只能胡一张牌，按夹胡算
+                        "zhuang": 407,  # 庄家翻倍
+                        "duoxiang": 408,  # 一炮多响
+                    }
+            },
+        "mudanjiang_common":
+            {  # 牡丹江传统玩法
+                "id": 5,
+                "optionals":
+                    {
+                        "hongzhong": 501  # 红中满天飞
+                    }
+            },
+        "mudanjiang_jiahu":
+            {  # 牡丹江夹胡玩法
+                "id": 6,
+                "optionals":
+                    {
+                        "duibao": 601,  # 对宝
+                        "dafeng": 602,  # 刮大风
+                        "dakou": 603,  # 大扣
+                        "xiadan": 604,  # 下蛋
+                        "hongzhong": 605,  # 红中满天飞
+                        "zhuang": 606,  # 庄家翻倍
+                        "duoxiang": 607,  # 一炮多响
+                    }
+            },
+        "happy":
+            {  # 欢乐场玩法
+                "id": 7,
+                "optionals":
+                    {
+                        "zimo": 701,  # 自摸
+                        "dianpao": 702,  # 点炮
+                        "bao": 703,  # 摸宝
+                        "baozhongbao": 704  # 宝中宝
+                        "hongzhong": 705  # 红中满天飞
+                    }
+            }
+    */

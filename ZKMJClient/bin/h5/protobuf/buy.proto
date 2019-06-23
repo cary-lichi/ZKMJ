@@ -1,0 +1,27 @@
+import "assets.proto";
+
+message Good{//商品
+  required int32 nID = 1;//商品id
+  optional int32 nCount = 2;//购买数量
+}
+
+message BuyRequest {//购买请求协议
+  required int32 nUserID = 1;//用户ID
+  repeated Good goods = 2;//要购买的商品
+}
+
+message BuyResponse {//购买响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional AssetUpdate newAssets = 2;//新资产
+}
+
+//苹果内支付购买
+message AppleBuyRequest {//购买请求协议
+  required int32 nUserID = 1;//用户ID
+  repeated Good goods = 2;//要购买的商品
+}
+
+message AppleBuyResponse {//购买响应协议
+  required int32 nErrorCode = 1;//错误码
+  required AssetUpdate newAssets = 2;//新资产
+}

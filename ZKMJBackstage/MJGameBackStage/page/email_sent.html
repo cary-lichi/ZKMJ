@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>福利发放</title>
+		  <script src="jquery-1.7.min.js"></script>
+		  <link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/email_sent.css" />
+		
+	</head>
+	<body >
+		<!--菜单栏
+		<div id="topper">
+		    <div class="menu">
+		    	<div class="logo">
+				    <img src="img/logo.png" style="position: absolute;padding-top: 10px;padding-left: 10px;"/>
+			    </div>
+			        
+			    <div class="menu_right">
+			        	
+			        <div class="login">
+				        <span class="user">当前用户：
+				            <span id="current_name">lea</span>
+				        </span>
+				        <img src="img/退出.png" class="dcimg" style="width: 15px;height: 15px;" />
+				        <span class="exit" id="logout" ><a >退出登录</a></span>
+			        </div>
+			            
+		    		<div class="menu_list">
+		    			<ul>
+		    			<li ><a href="index.html">玩家管理</a></li>
+		    			<li><a href="page/agent_management.html">代理管理</a></li>
+		    			<li><a href="#">订单查询</a></li>
+		    			<li><a href="#">日志查询</a></li>
+		    			<li><a href="#">公告发布</a></li>
+		    			<li class="fuli"><a href="#">福利发放</a></li>
+		    			<li><a href="#">分享奖励</a></li>
+		    			<li><a href="#">账号管理</a></li>
+		    			</ul>
+		    		</div>
+		    	</div>  
+		    </div>
+	</div>-->
+	       <!--textarea-->
+	       <center >
+		    	       <p style="font-weight: bold;color: #000;">邮件编辑</p>
+		    	       <form style="position:relative;"> 
+		    	           <div class="float" >
+		    		           <a href="#" id="aa"  style="float: left;"> 添加附件</a>
+		    		           <input type="file" id="file2" style="display: none;" />
+		    		       </div>
+		    		       <textarea id="textarea" ></textarea>
+		    		       <input type="submit" class="btn" value="提交" /> 
+		    	       </form>
+		    
+		    </center>
+		    <br />
+		    <div class="middle-bottom-left">
+		         <label class="demo--label">
+                    <input class="demo--radio" type="radio" name="demo-radio">
+                    <span class="demo--radioInput"></span>一次性
+                 </label>
+                 <label class="demo--label">
+                    <input class="demo--radio" type="radio" name="demo-radio">
+                    <span class="demo--radioInput"></span>恒定
+                 </label>
+            </div>
+		    	   <span class="page2" >
+		    			 <div class="pagebg" >页码</div>
+                         <input type="number" class="pagebtn" style="width: 50px;height:38px;" id="num" value="1"/>
+                         <span style="position: absolute;">
+                        	<div id="pageup" onclick="pagenums(id)"><img src="../img/上三角.png" width="10px" height="7px";></div>
+                            <div id="pagedown" onclick="pagenums(id)"><img src="../img/下三角.png" width="10px"  height="7px"></div>
+                         </span>
+                 </span>
+		    <!--详细信息-->  
+		    <table border="2" bordercolor="#888">
+		    	<thead>
+		    		<tr style="background-color: #AFAFB5;" id="tables">
+		    			<th style="width: 200px;">邮件ID</th>
+		    			<th style="width: 200px;">标题</th>
+		    			<th style="width: 800px;">内容</th>
+		    			<th style="width: 100px;">钻石</th>
+		    			<th style="width: 200px;">邮件时间</th>
+		    			<th style="width: 200px;">其他附件</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		           <tr><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td></tr>
+		           <tr><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td></tr>
+		           <tr><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td></tr>
+		           <tr><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+		           
+		    	</tbody>
+		    </table>
+   </body>
+   <script type="text/javascript">
+//			var height=document.getElementsByTagName('body')[0].clientHeight;
+//			var par = window.parent.document.getElementById('myiframe');
+//			par.style.height=height + 'px';
+			var aa=document.getElementById('aa');
+			aa.onclick=function ()
+			{
+				document.getElementById('file2').click();
+				
+			}
+			
+            //页码
+			function pagenums(ev)
+			{
+				var pageup=document.getElementById("pageup");
+				var pagedown=document.getElementById("pagedown");
+				var num=document.getElementById("num");
+				if(ev=="pageup")
+				{
+					if(num.value>0) num.value++;
+                }
+				else if(ev=="pagedown")
+				{	
+					if(num.value>1) num.value--;
+				}
+			}
+			
+			
+		</script>
+</html>

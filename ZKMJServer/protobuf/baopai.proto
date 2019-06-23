@@ -1,0 +1,10 @@
+import "pai.proto";
+message BaoPaiShowNotify {//宝牌显示通知协议
+  required int32 nUserID = 1;//用户ID
+  required Pai baopai = 2;//宝牌信息
+}
+
+message BaoPaiChangeNotify {//宝牌更换通知协议
+  required int32 nUserID = 1;//用户ID
+  required Pai newBao = 2;//宝牌信息
+}

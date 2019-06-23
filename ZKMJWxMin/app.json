@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/main/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "地道周口麻将",
+    "navigationBarTextStyle": "black"
+  }
+}

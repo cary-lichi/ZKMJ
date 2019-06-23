@@ -1,0 +1,4 @@
+<page>
+   <item name="MahjongRoot/LoginPage.ui" props="size=1136,720" ifExport="默认"/>
+   <item name="MahjongRoot/OrdinaryRoomPage.ui" props="width=1136@@!@@height=640" ifExport="默认"/>
+</page>

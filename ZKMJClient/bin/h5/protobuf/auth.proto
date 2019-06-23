@@ -1,0 +1,24 @@
+import "assets.proto";
+message VCodeRequest {//验证码获取请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sPhone = 2;//用户手机
+}
+
+message VCodeResponse {//验证码获取响应协议
+  required int32 nErrorCode = 1;//错误码
+  required string sVCode = 2;//验证码
+}
+
+message AuthRequest {//公告拉取请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sPhone = 2;//用户手机
+  required string sVCode = 3;//用户验证码
+  required string sRealName = 4;//用户真实姓名
+  required string sSFZ = 5;//用户身份证
+}
+
+message AuthResponse {//公告响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional AssetUpdate newasset = 2;//新资产
+}
+

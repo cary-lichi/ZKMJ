@@ -1,0 +1,25 @@
+/**index.wxss**/
+
+page {
+  background-image: url('https://www.cxagile.cn/mjWxMin/wxImg/bg.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.view{
+  width: 100%;
+  height: 900px;
+}
+.btn {
+  background-image: url("https://www.cxagile.cn/mjWxMin/wxImg/start.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 50px;
+  top: 100px;
+}
+.img{
+  width: 260px;
+  height: 116px;
+  padding-left: 40px;
+  padding-top: 100px;
+}

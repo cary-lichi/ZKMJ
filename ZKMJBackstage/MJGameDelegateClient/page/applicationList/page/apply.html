@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/apply.css"/>
+		<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<!--<header class="mui-bar">
+			<img src="../img/back.png" id="back" class="backimg" />
+		    <a>返回</a>
+		    <a id="close">关闭</a>
+		    <h1 class="mui-title">代理后台</h1>
+		    <img src="../img/more.png" id="more" class="moreimg" />
+		</header>-->
+		<ul id="myul" style="width: 100%;position: absolute;top: 60px;">
+			<!--<li class="mui-table-view-cell">
+				<img src="../img/cat.jpg" id="userphoto" class="mui-media-object mui-pull-left userphotoimg" />
+				<div class="mui-media-body">
+					<span id="user" class="userspan">玩家微信名称</span>
+					<label class="mylabel"><img src="../img/player.png" id="plear" class="playerimg" /><span>玩家</span></label>
+					<label class="mylabel"><img src="../img/agency.png" id="agency" class="agencyimg" /><span>代理</span></label>
+				</div>
+				<div id="delect" class="delectbtn">删除</div>
+				<div id="agree" class="agreebtn">同意</div>
+			</li>-->
+		</ul>	
+		
+	</body>
+	<script type="text/javascript">
+		function inserttext(box,count)
+		{
+			box.className='mui-table-view';
+			for(var i=0;i<count;i++)
+			{
+				var li=document.createElement('li');
+				li.className='mui-table-view-cell';
+				box.appendChild(li);  //把li添加到ul上
+				var img1=document.createElement('img');
+				img1.src='../img/cat.jpg';
+				img1.className='mui-media-object mui-pull-left userphotoimg';
+				li.appendChild(img1);  //把img添加到li上
+				var div1=document.createElement('div');
+				div1.className='mui-media-body';
+				li.appendChild(div1);  //把包含昵称和累计充值的div添加到li上
+				var span1=document.createElement('span');
+				span1.className='userspan';
+				var span1html='玩家昵称';
+				span1.innerHTML=span1html;
+				div1.appendChild(span1); //把span（玩家昵称）添加到div上
+				var laber1=document.createElement('laber');
+				laber1.className='mylabel';
+				div1.appendChild(laber1);
+				var img2=document.createElement('img');
+				img2.src='../img/player.png';
+				img2.className='playerimg';
+				laber1.appendChild(img2);
+				var span2=document.createElement('span');
+				span2.innerHTML='玩家';
+				laber1.appendChild(span2);
+				
+				var laber2=document.createElement('laber');
+				laber2.className='mylabel';
+				div1.appendChild(laber2);
+				var img3=document.createElement('img');
+				img3.src='../img/agency.png';
+				img3.className='agencyimg';
+				laber2.appendChild(img3);
+				var span3=document.createElement('span');
+				span3.innerHTML='代理';
+				laber2.appendChild(span3);
+				
+				var div2=document.createElement('div');
+				div2.className='delectbtn';
+				div2.innerHTML='删除';
+				li.appendChild(div2);
+				var div3=document.createElement('div');
+				div3.className='agreebtn';
+				div3.innerHTML='同意';
+				li.appendChild(div3);
+			}
+		}
+		var box_=document.getElementById('myul');
+		inserttext(box_,2);
+	</script>
+</html>

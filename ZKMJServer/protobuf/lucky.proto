@@ -1,0 +1,11 @@
+import "assets.proto";
+message LuckyRequest {//抽奖请求协议
+  required int32 nUserID = 1;//用户ID
+}
+
+message LuckyResponse {//抽奖响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional AssetUpdate newAssets = 2;//新资产
+  optional int32 nLucky = 3;//抽到的幸运奖品id
+}
+

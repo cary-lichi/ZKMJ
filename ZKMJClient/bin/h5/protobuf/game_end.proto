@@ -1,0 +1,25 @@
+import"pai.proto";
+message GamerInfo {//玩家结算信息
+  required GamerPaiPool gamerPai = 1;
+  required int32 nGameCoin = 2;//游戏币（积分）
+  required bool bHu = 3;//是否胡
+  required bool bTing = 4;//是否听
+  repeated int32 nHuOPList = 5;//胡的类型列表
+  optional int32 nID = 6;//玩家id
+  optional bool bBoss = 7;//玩家是否是庄家
+  optional Pai hupai = 8;//胡的牌信息
+  optional int32 huCount = 9;//胡牌数量
+  optional int32 moBaoCount = 10;//摸宝数量
+  optional int32 ziMoCount = 11;//摸宝数量
+  optional int32 gangCount = 12;//自摸数量
+  optional int32 dianPaoCount = 13;//点炮数量
+  optional int32 danJuBestCount = 14;//单句最佳数量
+  optional int32 totalScore = 15;//总分
+}
+
+message GameEndNotify {//游戏结算通知协议
+  optional Pai bao = 1;//宝牌信息
+  repeated GamerInfo infoList = 2;//用户结算信息
+  optional bool bHuang = 3;//是否黄庄
+  optional bool bOver = 4;//房卡打完，总结算
+}

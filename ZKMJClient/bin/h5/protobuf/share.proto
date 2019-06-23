@@ -1,0 +1,10 @@
+import "assets.proto";
+message ShareRequest {//分享请求协议
+  required int32 nUserID = 1;//用户ID
+}
+
+message ShareResponse {//分享响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional AssetUpdate newAssets = 2;//新资产
+}
+

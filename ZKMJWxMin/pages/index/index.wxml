@@ -1,0 +1,2 @@
+<image class="img"  src='https://www.cxagile.cn/mjWxMin/wxImg/title.png'></image>
+<button class="btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>

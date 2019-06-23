@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/announcement.css"/>
+		<script type="text/javascript" src="../js/config.js"></script>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/checkToken.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<!--<div class="top">
+				<img src="../img/logo.png" class="logoimg" />
+				<div class="nav">										
+					<span>当前用户:les</span>
+					<span><img src="../img/退出.png" class="quit" />登出</span>
+				</div>
+				<div class="navication"></div>
+					<ul class="ul_list">
+						<li>玩家管理</li>
+						<li>代理管理</li>
+						<li>订单查询</li>
+						<li>日志查询</li>
+						<li style="background-color: white;color: black;">公告发布</li>
+						<li>分享奖励</li>
+						<li>账号管理</li>
+					</ul>
+				</div>-->
+			<!--</div>-->
+			<!--<iframe src="nav_list.html" style="width: 100%;height: 100%;border: none;" marginheight= "0 " marginwidth= "0 " hspeace= "0 " vspace= "0 " frameborder= "0 " scrolling= "auto "></iframe>-->
+			
+			
+			<div class="middle" style="width: 100%;">
+				<div class="middle_left" style="width: 50%;text-align: center;float: left;">
+					<h5>公告编辑</h5>
+					<textarea id="ggtext"></textarea>
+					<div class="submit_left" id="submitl">提交</div>
+				</div>
+				<div class="middle_right" style="width: 50%;text-align: center;float: left;">
+					<h5>广播编辑</h5>
+					<textarea id="gbtext"></textarea>
+					<div class="submit_right" id="submitr">提交</div>
+				</div>
+			</div>
+			
+			<div style="clear: all;"></div>
+			<div class="midd_bottom" style="width: 100%;">
+				<div class="middle-bottom-left" style="float: left;">
+					<label class="ycx"><input type="radio" name="abc" id="yc"><i>✓</i>壹次性</label>
+					<label class="hdx"><input type="radio" name="abc" id="hd"><i>✓</i>恒定</label>		        
+				</div>
+				
+				<div class="page">
+	        		<div class="page_txt">页码</div>
+	        		<input type="text" id="page" />
+					<img src="../img/上三角.png" class="up_triangle" id="reduce" />
+					<img src="../img/下三角.png" class="down_triangle" id="add" />
+				</div>
+			</div>
+			
+			<div style="clear: all;"></div>
+			<div class="bottom">
+				<table id="table">
+					<thead>
+						<tr style="background-color: #BAB9BE;">
+							<td style="width: 20%;">标题</td>
+							<td style="width: 50%;">内容</td>
+							<td style="width: 30%;">广播时间</td>
+						</tr>
+					</thead>
+					<tbody class="table_body">
+						<tr>
+							<td>玩家1</td>
+							<td>123</td>
+							<td>2017/11/4 19:35</td>
+						</tr>
+						<tr>
+							<td>玩家2</td>
+							<td>123</td>
+							<td>2017/11/4 19:35</td>
+						</tr>
+						<tr>
+							<td>玩家3</td>
+							<td>123</td>
+							<td>2017/11/4 19:35</td>
+						</tr>
+						<tr>
+							<td>玩家4</td>
+							<td>123</td>
+							<td>2017/11/4 19:35</td>
+						</tr>
+						<tr>
+							<td>玩家5</td>
+							<td>123</td>
+							<td>2017/11/4 19:35</td>
+						</tr>
+						<tr>
+							<td>玩家6</td>
+							<td>123</td>
+							<td>2017/11/4 19:35</td>
+						</tr>
+					</tbody>
+				</table>				
+			</div>			
+		</div>
+		
+		<script type="text/javascript">			
+			var box=document.getElementById("box");
+			var height=box.clientHeight;
+			var par = window.parent.document.getElementById('myiframe');
+			par.style.height=height + 'px';
+//			var Aid=localStorage.getItem('Aid');
+//			var token=localStorage.getItem('token');
+//			function Heartrequest()
+//			{
+//				$.ajax({
+//					type:"post",
+//					url:config.baseUrl+"/adminLoginHeart",
+//					async:true,
+//					data:
+//					{
+//						"Aid":Aid,
+//						"token":token
+//					},
+//					dataType: 'json',
+//					success:function(data)
+//					{
+//						console.log(data);
+//						if(data.errorcode==0)
+//						{
+//							
+//						}
+//					},
+//					error: function(xhr, type, errorThrown) {
+//						//异常处理；
+//						mui.toast('服务器异常');
+//			        }
+//				});
+//			}
+//			setInterval("Heartrequest()",10000);
+			
+		</script>
+	</body>
+</html>

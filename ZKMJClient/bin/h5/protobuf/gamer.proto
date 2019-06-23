@@ -1,0 +1,22 @@
+import "pai.proto";
+import "login.proto";
+
+message Gamer{//玩家
+  required string sRoomID  = 1;//房间id
+  required int32 nGID = 2;//玩家id，如果id>0说明是玩家，<0说明是机器人
+  required int32 nPos = 3;//玩家方位
+  required bool bBoss = 4;//是否庄家
+  required int32 state = 5;//是否听了
+  required bool bOwner = 6;//是否房主
+  required string sName  = 7;//玩家昵称
+  required string sHeadImage  = 8;//玩家头像
+  optional GamerPaiPool paipool = 9;//牌池
+  optional bool bOnline = 10;//是否掉线
+  optional int32 totalScore = 11;//总分
+  optional int32 gameState = 12;//游戏中状态 0：准备 1：游戏中 2:结算
+  optional bool bAI = 13;//玩家是否托管
+  optional int32 nGender = 14;//用户性别
+  optional int32 nAIRandInfo = 15;//机器人随机信息
+  optional int32 nAIRandHead = 16;//机器人随机信息
+  optional Location location = 17;//玩家位置信息
+}

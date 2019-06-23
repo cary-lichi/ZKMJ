@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			html{
+				width: 100%;
+				font-size:62.5%;
+			}
+			
+			.menu{
+				width: 100%;
+				height: 5.5rem;
+				margin-bottom: 1.1rem;
+			}
+			
+			
+			.login
+			{
+				float: right;
+			    font-size: 1.1rem;
+			    color: #757575;
+			    font-family: "宋体";	
+			    padding-top: 1rem;
+			}
+			
+			.logoimg{
+				float: left;
+				margin-left: 0.8rem;
+				margin-top: 0.8rem;
+			}
+			.dcimg
+			{
+				width: 1rem;
+				height: 1rem;
+				
+			}
+			.login .user
+			{
+				padding-right: 0.5rem;
+				margin-right: 0.5rem;
+			}
+			
+			.menu_right {
+				margin-left: 10.2rem;
+				width: 102rem;
+				height: 7.5rem;
+			}
+			
+			.menu_list ul {
+				list-style-type: none;
+			}
+			
+			.menu_list li {
+				width: 10rem;
+				margin-top: 2rem;
+				height: 3rem;
+				float: left;
+				text-align: center;
+				line-height: 3rem;
+			}
+			
+			.menu_list a {
+				color: #428bca;
+				display: inline-block;
+				font: 14px/1.5 '微软雅黑';
+				text-decoration: none;
+			}
+			
+			.menu_list li a:hover{
+				background-color: white;
+				color: black;
+				width: 10rem;
+				height: 3rem;
+				line-height: 3rem;
+				border-radius: 0.8rem;
+			}
+			
+			.active{
+				display: block;
+				background-color: white;
+				color:black;
+				width: 10rem;
+				height: 3rem;
+				line-height: 3rem;
+				border-radius: 0.8rem;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="box" style="background-image: url(../img/bg_img.png);background-repeat: repeat-x;width: 100%;">
+			<div class="menu" style="background-image: url(../img/bg_img.png);background-repeat: repeat-x;width: 100%;">	
+				<img src="../img/logo.png" class="logoimg" />	
+				<div class="menu_right">
+					<div class="login">
+						<span class="user">当前用户：<span id="current_name"></span></span>						
+						<span class="exit" id="logout" style="cursor: pointer;"><a style="color: #757575;"><img src="../img/退出.png" class="dcimg" />退出登录</a></span>
+					</div>
+					<nav class="menu_list" id="menu_list">
+						<ul>
+							<li class="nav-item">
+								<a class="nav-link" id="play_management" target="ifm" href="play_management.html">玩家管理</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="agent_management" target="ifm" href="agent_management.html">代理管理</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="order_inquiry" target="ifm" href="order_inquiry.html">订单查询</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="log_query" target="ifm" href="log_query.html">日志查询</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="announcement" target="ifm" href="announcement.html">公告发布</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" target="ifm" href="#">邮件发放</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" target="ifm" href="#">分享奖励</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" target="ifm" href="Operating_background.html">账号管理</a>								
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="test" id="test">
+				<iframe src="play_management.html" name="ifm" id="myiframe" scrolling="no" width="100%" frameborder="0"></iframe>				
+			</div>
+			
+			
+		</div>
+		
+		<script src="../js/checkToken.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			setInterval(function(){
+				if(checkToken()){
+//					window.location.href = "../index.html";
+				}
+				else{
+					window.location.href = "../index.html";
+				}
+			},10000);
+			
+				
+			$(function(){
+				if(checkToken()){
+					changeTab("play_management.html");
+		            $('.nav-link').each(function(index){
+		                $(this).click(function(){
+		                    changeTab(this.href);
+		                    $('.nav-link').css("color","#428bca");
+		                    $('.nav-item').removeClass("active");
+		                    $(this).parent().addClass("active");
+		                    $(this).css("color","black");
+		                    sessionStorage.setItem('myhtml',this.href);
+		                    sessionStorage.setItem('liid',this.id);
+		                    sessionStorage.setItem('index',index);
+		                })
+		            })
+		           }
+		        });
+		        function changeTab(Tab){	        	
+		            if (sessionStorage.getItem('myhtml')!=null) 
+		            {
+		            	document.getElementById("myiframe").src=sessionStorage.getItem('myhtml');
+		            	$('.nav-link').css("color","#428bca");
+		            	$('.nav-item').removeClass("active");
+		            	$('#'+sessionStorage.getItem('liid')).parent().addClass("active");
+		            	$('#'+sessionStorage.getItem('liid')).css("color","black");
+		            }
+		            else{
+		            	document.getElementById("myiframe").src = Tab;
+		            }
+		        }       
+		        
+				var nickName=localStorage.getItem('nickName');
+				$('#current_name').html(nickName);
+				var Aid=localStorage.getItem('Aid');
+				var token=localStorage.getItem('token')
+				$("#logout").click(function(){
+	
+					$.ajax({
+						type:"post",
+						url:config.baseUrl+"/adminOutLogin",
+						async:true,
+						data:
+						{
+							"Aid":Aid,
+							"token":token
+						},
+						dataType: 'json',
+						success:function(data)
+						{
+							console.log(data);
+							if(data.errorcode==0)
+							{
+								localStorage.clear();
+								window.location.href ="../index.html";
+							}
+						},
+						error: function(xhr, type, errorThrown) {
+							//异常处理；
+							mui.toast('服务器异常');
+				        }
+					});
+				});
+		
+		</script>
+	</body>
+
+</html>

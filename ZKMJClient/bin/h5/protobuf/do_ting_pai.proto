@@ -1,0 +1,16 @@
+import "pai.proto";
+message DoTingPaiRequest {//听牌请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID  = 2;//房间ID
+  optional Pai pai = 3;//听的牌
+}
+
+message DoTingPaiResponse {//听牌响应协议
+  required int32 nErrorCode = 1;//错误码
+}
+
+message DoTingPaiNotify {//听牌通知协议
+  required int32 nUserID = 1;//吃用户ID
+  required string sRoomID  = 2;//房间ID
+  optional Pai pai = 3;//听的牌
+}

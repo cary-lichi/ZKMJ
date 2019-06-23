@@ -1,0 +1,17 @@
+enum EnumExchange {
+  CRYSTAL2GOLD = 0;//钻石兑换金币
+  GOLD2POWER = 1;//金币兑换体力
+}
+message ExchangeRequest {//充值请求协议
+  required int32 nUserID = 1;//用户ID
+  required EnumExchange nType = 2;//兑换类型
+  optional int32 nCount = 3;//兑换数量
+}
+
+message ExchangeResponse {//充值响应协议
+  required int32 nErrorCode = 1;//错误码
+  required EnumExchange nType = 2;//兑换类型
+  optional int32 nCountL = 3;//当前兑换资源数量
+  optional int32 nCountR = 4;//当前被兑换资源数量
+}
+

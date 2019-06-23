@@ -1,0 +1,4 @@
+message ClientLogRequest {//客户端log请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sContent = 2;//log内容
+}

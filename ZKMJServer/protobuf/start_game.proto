@@ -1,0 +1,25 @@
+import "pai.proto";
+
+message InitPaiNotify {//初始化牌通知协议
+  repeated GamerPaiPool paiPool = 1;//所有玩家牌信息
+  required int32 nLeft = 3;//剩余的牌数量
+}
+
+message StartGameNotify {//开始游戏通知协议
+  required string sRoomID  = 1;//房间ID
+  required int32 nBossID = 2;//庄ID
+}
+
+message ReadyGameRequest {//游戏准备请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID = 2;//房间ID
+}
+
+message ReadyGameResponse {//游戏准备响应协议
+  required int32 nErrorCode = 1;//错误码
+}
+
+message ReadyGameNotify {//游戏准备通知协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID = 2;//房间ID
+}

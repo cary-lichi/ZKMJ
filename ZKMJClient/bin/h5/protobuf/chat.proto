@@ -1,0 +1,16 @@
+message ChatRequest {//聊天请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID = 2;//房间ID
+  required string sContent = 3;//内容
+}
+
+message ChatResponse {//聊天响应协议
+  required int32 nErrorCode = 1;//错误码
+}
+
+message ChatNotify {//聊天通知协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID = 2;//房间ID
+  required string sContent = 3;//内容
+}
+

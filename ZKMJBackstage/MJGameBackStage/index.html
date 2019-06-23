@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>登录</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <div class="page-container">  
+            <div class="title font_center">
+            	<h1 style="color: white;font-size: 2rem;width: 13rem;display: inline-block;height: 8rem;line-height: 8rem;">
+		  		用户管理平台
+			  	</h1>
+			  	<span style="display:inline-block;width:3rem;height:1.4rem;background-color: white;font-size: 1.2rem;color:#0095FD ;">
+			  		v4.D
+			  	</span>	
+            </div>
+            
+			<form style="width: 40rem;height: 22rem;border: 1px solid #DDDDDD;background-color: white;font-size:1.3rem ;">
+				
+				<div class="wrap">
+					<span class="inner-left font_center">
+						<img src="img/用户名.png" style="width:2rem;height: 2rem;margin-top: 0.75rem;" />
+					</span>
+					<input type="text" name="username" class="inner-right username" />
+				</div>
+				<div class="wrap">
+					<span class="inner-left font_center">
+						<img src="img/密码.png" style="width:2rem;height: 2rem;margin-top: 0.75rem;" />
+					</span>
+					<input type="password" name="password" class="inner-right password" />
+				</div>
+				<div class="wrap" style="border: 0;">
+					<input type="radio" name="manage_type" />子管理员
+				</div>
+				<div class="wrap font_center" style="border: 0;margin-top: 0;">
+					<input type="button" class="btn submit" value="登录" />
+				</div>
+				<div class="error"><span>+</span></div>
+				
+			</form>
+        </div>
+        <script type="text/javascript" src="js/jquery-3.0.0.js" ></script>
+		<script type="text/javascript" src="js/config.js" ></script>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+	    <script type="text/javascript" src="js/index.js" ></script>
+</body>
+</html>
+
+

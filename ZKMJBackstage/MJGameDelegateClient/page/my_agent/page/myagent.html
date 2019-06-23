@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../my_diamonds/css/my_income.css" />
+		<link rel="stylesheet" type="text/css" href="../../chargemoney_agent/css/alertbox.css" />
+		<script src="../../../js/config.js"></script>
+		<script type="text/javascript" src="../../../js/adapter.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../../../js/common.js"></script>
+		
+		<style type="text/css">
+		*{
+			font-size: 12px;
+				
+			}
+		.box li{
+			font-size: 12px;
+		}
+		.box li input, .b-confirm li button{
+			font-size: 12px;
+		}
+		.mui-table-view-cel{
+			top: 300px;
+		}
+		.rechargebtn{
+			float: right;
+			margin-top: -0.7rem;
+			
+		}
+		.mui-table-view li{
+			background-color: #FFFFFF;
+		}
+		</style>
+	</head>
+	<body>
+		<!--导航栏	-->
+		<!--<header  class="mui-bar mui-bar-nav" >
+			<span><img class="mui-icon-image span1" src="../img/return.png" /></span>
+			<h1 class="mui-title" style="color: white;" >代理后台 </h1>
+			<span class="span1" id="select_l" style="font-size: 0.3rem;">返回</span>	
+			<span class="span1" id="select_l" style="margin-left:0.3rem;font-size: 0.3rem">关闭</span>
+			<span><img class="mui-icon-image span1" style="float: right;" src="../img/more.png"> </span>
+		</header>-->
+<!--中间	-->
+		<div class="mui-content">
+			<div class="agent_number" style="border-bottom: 1px solid #EFEFF1;line-height: 1rem;height:  1rem;background-color: #F5F5F9;">
+				<span class="total_agent" style="font-size: 0.3rem;margin-left: 0.2rem;	color: #9B4B44;">代理总人数：<span id="agentcount" style="font-size: 0.3rem;"></span></span>
+				<span class="week_agent" style="float: right;color: #D05A20;margin-right: 1rem;font-size:0.3rem;">本周新加：<span></span></span>
+			</div>
+		<ul id="ultext" class="mui-table-view" style="width: 100%;height: auto;">
+			
+		</ul>	
+		</div>
+		<!--<div class="mui-footer" style="height: auto;">
+ 			<button type="button" id="add_user"  class="withdraw_deposit" style="background-color: #1AAC19">添加</button>
+ 		</div>-->
+		
+		<!--弹框-->
+        <!--<div class="alertbox" style="display: none;">
+			<ul class="box" style="font-size: 10px;">
+				<li >
+					<label>id:</label>
+					<input type="text" id="diamond-count" style="border: 1px solid lightgrey;"/>
+				</li>
+				<li>
+					<label>昵称:</label>
+					<input type="text" id="handle-type" style="border: 1px solid lightgrey;"/>
+				</li>
+			</ul>
+
+			<ul class="b-confirm">
+				<li style="border-right: solid 1px grey;"><button id="b-yes">确认</button> </li>
+				<li> <button id="b-no">取消</button> </li>
+			</ul>
+
+		</div>-->
+        
+        
+        
+		
+	</body>		
+<!--添加下级代理-->
+<script src="../../../js/mui.js"></script>
+<script src="../../../js/mui.min.js"></script>
+	<script type="text/javascript">
+			$(".cover").hide();
+			$("#add_user").click(function(){ 
+				var buy_diamond=$("#buy_diamond").val();
+				$(".cover").show();
+					$('.alertbox').css('display','block');
+					$("#b-yes").click(function(){
+						$(".alertbox").hide();
+						$(".cover").hide();
+						
+						var nid=$('#diamond-count').val();
+                        var nick=$('#handle-type').val();
+                        var id=did;					
+						$.ajax({
+					    	type:"post",
+					    	url:config.baseUrl +"/deleAddChildren",
+					    	async:true,
+					    	data:{
+						          'id':id,
+					              'nid':nid,
+					              'nick':nick
+									},
+							dataType:'json',
+							success:function(data){
+								console.log(data);
+								if(data.errorcode==0){
+									alert("创建成功!");
+								}
+							    else{
+							    	alert("创建未成功!");
+							    }
+							},
+							error:function(xhr,status,error)
+							{
+								mui.toast("服务器错误!");
+							}
+					    });
+					
+		});
+		$("#b-no").click(function(){
+			$(".alertbox").hide();
+			$(".cover").hide();
+		});
+		
+});
+
+//获取代理下级代理
+	$.ajax({
+			type:"post",
+		     url:config.baseUrl+"/deleGetChildren",
+			async:true,
+			data:{'id':did},
+			dataType:"json",
+			success:function(data)
+			{
+			  console.log(data);
+			  if(data.childLen==0)
+			  {
+			  	
+			  }
+			  else{
+				  if(data.errorcode==0){
+				  	var html="";
+					$.each(data.deleInfo, function(item,index) {
+						console.log(item);
+						if(item!='errorcode')
+						{
+							html+='<li class="mui-table-view-cell">';
+							html+='<img src="../img/cat.jpg" id="userphoto" class="mui-media-object mui-pull-left userphotoimg" />';
+							html+='<div class="mui-media-body">';
+				            html+='<span class="userspan">'+data.deleInfo[item].nick+'</span>';
+					        html+='<p class="mui-ellipsis addrechargep">累计充值:<span class="money_l">'+data.deleInfo[item].money+'</span></p>';
+					        html+='</div><div id="'+data.deleInfo[item].did+'" class="rechargebtn" onclick="recharge('+data.deleInfo[item].did+')"><button type="button" style="background-color: #1AAC19;border:none">充值</button></div></li>';	
+						}			
+					});
+					$('#agentcount').html(data.childLen);
+					$("#ultext").html(html);
+				  }	
+			  }
+			},
+			error:function(xhr,status,error)
+			{
+				mui.toast("服务器错误!");
+			}
+		}); 
+		
+		$('#back').click(function(){
+			mui.back();
+		}); 
+		
+		
+//		nick:当前要充值的人的名称
+//		money:钻石数量
+
+		function recharge(id)
+		{
+			var id = id;
+			var did = did;
+			mui.openWindow({
+				url:"../../chargemoney_agent/page/chargemoney_agent.html?did="+id,
+				id:"chargemoney_agent.html",
+				waiting:{
+					autoshow:true,
+					title:"页面加载中，请稍后......"
+				}
+			})
+		}
+		</script>	
+	
+
+
+</html>

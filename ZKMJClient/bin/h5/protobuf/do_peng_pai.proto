@@ -1,0 +1,21 @@
+import "pai.proto";
+
+message DoPengPaiRequest {//碰牌请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai pai = 3;//碰的牌
+}
+
+message DoPengPaiResponse {//碰牌响应协议
+  required int32 nErrorCode = 1;//错误码
+  required int32 nLastID = 2;//上一个打牌用户ID
+  required Pai lastPai = 3;//上一个打的牌
+}
+
+message DoPengPaiNotify {//碰牌通知协议
+  required int32 nUserID = 1;//碰用户ID
+  required string sRoomID  = 2;//房间ID
+  required Pai pai = 3;//碰的牌
+  required int32 nLastID = 4;//上一个打牌用户ID
+  required Pai lastPai = 5;//上一个打的牌
+}

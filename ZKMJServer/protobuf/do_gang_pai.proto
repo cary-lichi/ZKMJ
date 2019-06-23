@@ -1,0 +1,22 @@
+import "pai.proto";
+
+message DoGangPaiRequest {//杠牌请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID  = 2;//房间ID
+  required GangPai pai = 3;//杠的牌
+}
+
+message DoGangPaiResponse {//杠牌响应协议
+  required int32 nErrorCode = 1;//错误码
+  optional int32 nLastID = 2;//上一个打牌用户ID
+  optional Pai lastPai = 3;//上一个打的牌
+  optional GangPai pai = 4;//杠的牌
+}
+
+message DoGangPaiNotify {//杠牌通知协议
+  required int32 nUserID = 1;//杠用户ID
+  required string sRoomID  = 2;//房间ID
+  required GangPai pai = 3;//杠的牌
+  optional int32 nLastID = 4;//上一个打牌用户ID
+  optional Pai lastPai = 5;//上一个打的牌
+}

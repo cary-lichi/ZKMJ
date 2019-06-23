@@ -1,0 +1,10 @@
+message ConnectNotify {//上线通知协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID = 2;//房间ID
+}
+
+message DisConnectNotify {//掉线通知协议
+  required int32 nUserID = 1;//用户ID
+  required string sRoomID = 2;//房间ID
+}
+

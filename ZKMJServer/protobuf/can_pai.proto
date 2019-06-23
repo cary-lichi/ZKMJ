@@ -1,0 +1,18 @@
+import "pai.proto";
+
+message CanPaiNotify {//可以做的牌操作通知协议
+  required int32 nUserID = 1;//用户ID
+  optional Pai lastPai = 2;//最后一次出的牌
+  optional bool canTing = 3;//可听
+  optional bool canHu = 4;//可胡
+  optional bool canQiangTing = 5;//可抢听
+  optional bool canGang = 6;//可杠
+  optional bool canPeng = 7;//可碰
+  optional bool canChi = 8;//可吃
+  repeated ChiPai canChiPool = 9;//可吃的牌组合
+  repeated Pai canPengPool = 10;//可碰的牌组合
+  repeated GangPai canGangPool = 11;//可杠的牌组合
+  optional int32 lastHuType = 12;//最后胡牌类型 0:正常 1:宝 2:大风（宝或者刮大风等）
+  optional bool bZm = 13;//是否自摸
+}
+

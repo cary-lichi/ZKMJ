@@ -1,0 +1,10 @@
+message SuggestRequest {//建议请求协议
+  required int32 nUserID = 1;//用户ID
+  required string sPhone = 2;//用户手机
+  required string sSuggest = 3;//用户建议
+}
+
+message SuggestResponse {//建议响应协议
+  required int32 nErrorCode = 1;//错误码
+}
+
